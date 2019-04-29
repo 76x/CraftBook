@@ -102,7 +102,7 @@ public class Lightning extends IC implements RestrictedIC {
                             "Input"
                     },
                     new String[]{
-                            "Strikes bolt upon location"
+                            "Strikes lightning upon IC location"
                     }
             };
     }

@@ -56,6 +56,7 @@ import com.sk89q.craftbook.sponge.mechanics.ics.factory.SerializedICFactory;
 import com.sk89q.craftbook.sponge.mechanics.ics.plc.PlcFactory;
 import com.sk89q.craftbook.sponge.mechanics.ics.plc.lang.Perlstone;
 import com.x76.craftbook.sponge.Lightning;
+import com.x76.craftbook.sponge.MessageAll;
 import org.spongepowered.api.Sponge;
 
 import java.util.Comparator;
@@ -135,7 +136,9 @@ class ICManager {
 
         registerICType(new ICType<>("MC6020", "RANDOM 5", "Random 5-Bit", "Randomly sets the outputs on high.", new RandomBit.Factory(), "SI5O"));
 
+        //New
         registerICType(new ICType<>("MCX255", "LIGHTNING", "Lightning", "Summons a lightning bolt when powered", new Lightning.Factory()));
+        registerICType(new ICType<>("MC1511", "MESSAGE ALL", "Message All", "Sends a nessages to all online players", new MessageAll.Factory()));
     }
 
     public static void registerICType(ICType<? extends IC> ic) {
