@@ -1,6 +1,6 @@
 /*
- * CraftBook Copyright (C) 2010-2018 sk89q <http://www.sk89q.com>
- * CraftBook Copyright (C) 2011-2018 me4502 <http://www.me4502.com>
+ * CraftBook Copyright (C) 2010-2019 sk89q <http://www.sk89q.com>
+ * CraftBook Copyright (C) 2011-2019 me4502 <http://www.me4502.com>
  * CraftBook Copyright (C) Contributors
  *
  * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
@@ -55,6 +55,7 @@ import com.sk89q.craftbook.sponge.mechanics.ics.factory.ICFactory;
 import com.sk89q.craftbook.sponge.mechanics.ics.factory.SerializedICFactory;
 import com.sk89q.craftbook.sponge.mechanics.ics.plc.PlcFactory;
 import com.sk89q.craftbook.sponge.mechanics.ics.plc.lang.Perlstone;
+import com.x76.craftbook.sponge.Lightning;
 import org.spongepowered.api.Sponge;
 
 import java.util.Comparator;
@@ -133,6 +134,8 @@ class ICManager {
         registerICType(new ICType<>("MC5000", "PERLSTONE", "Perlstone 3ISO Programmable Logic Chip", "3ISO PLC programmable with Perlstone.", new PlcFactory<>(new Perlstone()), "3ISO"));
 
         registerICType(new ICType<>("MC6020", "RANDOM 5", "Random 5-Bit", "Randomly sets the outputs on high.", new RandomBit.Factory(), "SI5O"));
+
+        registerICType(new ICType<>("MCX255", "LIGHTNING", "Lightning", "Summons a lightning bolt when powered", new Lightning.Factory()));
     }
 
     public static void registerICType(ICType<? extends IC> ic) {
